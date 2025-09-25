@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Page - Register & Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, main, footer { padding: 1rem; }
+        form { margin-bottom: 2rem; max-width: 400px; }
+        label { display: block; margin-top: 1rem; }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%; padding: 0.5rem; margin-top: 0.25rem;
+        }
+        button { margin-top: 1rem; padding: 0.5rem 1rem; }
+        section { margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: #4285F4;">FaceBook</h1>
+        <nav style="display: flex; gap: 24px;">
+            <a href="#register" id="nav-register">Register</a> 
+            <a href="#login" id="nav-login">Login</a>
+        </nav>
+    </header>
+    <main>
+        <section id="register-section" style="display:none;">
+            <h2>Register</h2>
+            <form id="register-form">
+                <label for="reg-username">Username</label>
+                <input type="text" id="reg-username" name="username" required>
+
+                <label for="reg-email">Email</label>
+                <input type="email" id="reg-email" name="email" required>
+
+                <label for="reg-password">Password</label>
+                <input type="password" id="reg-password" name="password" required>
+
+                <button type="submit">Register</button>
+            </form>
+            <div id="register-message"></div>
+        </section>
+        <section id="login-section" style="display:none;">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="login-username">Username or Email</label>
+                <input type="text" id="login-username" name="username" required>
+
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <div id="login-message"></div>
+        </section>
+        <section id="welcome-section" style="display:none;">
+            <h2>Welcome!</h2>
+            <p id="welcome-text"></p>
+            <button id="logout-btn">Logout</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+    <script>
+        const users = [{username: "phuong", password:"1"}];
+
+        function showSection(section) {
+            document.getElementById('register-section').style.display = 'none';
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('welcome-section').style.display = 'none';
+            document.getElementById(section).style.display = 'block';
+        }
+
+        document.getElementById('nav-register').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSection('register-section');
+        });
+        
+        document.getElementById('nav-login').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSection('login-section');
+        });
+
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('reg-username').value.trim();
+            const email = document.getElementById('reg-email').value.trim();
+            const password = document.getElementById('reg-password').value;
+
+            if (users.some(u => u.username === username || u.email === email)) {
+                document.getElementById('register-message').textContent = 'Username or email already exists.';
+                return;
+            }
+            users.push({ username, email, password });
+            document.getElementById('register-message').textContent = 'Registration successful! Please login.';
+            showSection('login-section');
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const usernameOrEmail = document.getElementById('login-username').value.trim();
+            const password = document.getElementById('login-password').value;
+
+            const user = users.find(u => (u.username === usernameOrEmail || u.email === usernameOrEmail) && u.password === password);
+            if (user) {
+                document.getElementById('welcome-text').textContent = `Hello, ${user.username}!`;
+                showSection('welcome-section');
+            } else {
+                document.getElementById('login-message').textContent = 'Invalid credentials.';
+            }
+        });
+
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            showSection('login-section');
+        });
+
+        window.addEventListener('load', function() {
+            if (location.hash === '#register') {
+                showSection('register-section');
+            } else {
+                showSection('login-section');
+            }
+        });
+    </script>
+</html>
