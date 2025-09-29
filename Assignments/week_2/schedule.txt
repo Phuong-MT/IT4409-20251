@@ -1,0 +1,6 @@
+1. trien khai base html.
+2. Body: 
+    1. avatar(tai su dung).
+    2. table schedule: su dung table/caption de the hien lich hoc.
+    3. review.
+    4 footer(tai su dung)
