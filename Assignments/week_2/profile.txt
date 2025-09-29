@@ -1,0 +1,14 @@
+1. Trang web su dung head/title : tieu de cua trang web
+2. Trong body:
+    - header: tieu de chinh cua page.
+    - body: thong tin co ban cua Truong Minh Phuong: 
+        1. Avatar(img).
+        2. Info: 
+            + user info: thong tin co ban.
+            + lifestyle: so thich thuong ngay.
+            + subject.
+            + Website.
+3: Cach tao trang:
+    1. Tao base html.
+    2. Lay avatar tu page QLDT(hust).
+    3. Trien khai cac thong tin.
