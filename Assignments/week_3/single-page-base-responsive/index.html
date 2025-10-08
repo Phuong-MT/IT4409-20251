@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Base Responsive</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <header id="navbar" class="header-container">
+        <div class="title">
+            Web Developer
+        </div>
+        <ul class="nav-bar">
+            <li>
+                <a href="#welcome-section">About</a>
+            </li>
+            <li>
+                <a href="#projects">Work</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>            
+        </ul>
+    </header>
+
+    <section id="welcome-section" class="about-me">
+        <img src="../../week_2/avatar.png" alt="truong-minh-phuong" loading="lazy"
+        width="200px"
+        >
+        <div class="profile">
+            <div class="title-container">
+                <h1 class="title">
+                    Truong Minh Phuong
+                </h1>
+                <div class="description">
+                    Web Developer & Student
+                </div>
+            </div>
+
+            <div class="project-tile">
+                I am a Backend (or Full-stack) Web Developer passionate about building efficient, secure, and scalable 
+                systems. I have experience working with technologies such as NestJS, Node.js, MySQL, Sequelize, and 
+                React/Next.js, focusing on designing clean and maintainable backend architectures optimized for performance
+                and long-term growth
+            </div>
+
+            <div class="about">
+                <a>
+                   <i class="fa fa-phone" aria-hidden="true"></i>
+                    &nbsp; 0867653238
+                </a>
+                <a>
+                   <i class="fa fa-envelope" aria-hidden="true"></i>
+                    &nbsp; minhphuongyenky@gmail.com
+                </a>
+                <a id="profile-link" href="https://github.com/Phuong-MT" target="_blank">
+                    <i class="fa fa-link" aria-hidden="true"></i>
+                    &nbsp; https://github.com/Phuong-MT</a>
+                <a>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    &nbsp; Long Bien - Ha Noi</a>
+            </div>
+        </div>
+    </section>
+
+    <h1 class="title-project">These are some of my projects</h1>
+    <section id="projects" class="project-container">
+        <div class="project-web">
+            <p class="project-tile"></p>>
+                Care Flow
+            </p>
+            <img width=200px height=200px src="https://github.com/phuthien007/Waiting-Queue/blob/master/client/public/resources/images/tf-logo.jpg?raw=true" alt="Project logo">
+            <p>
+                The project is a web-based event queue management app that helps organizers efficiently manage visitor queues. Built with NestJS and Next.js,
+                 it uses Socket.io for real-time updates and MySQL with Sequelize for scalable data management. The goal is to automate the queuing process, 
+                 enhance user experience, and improve operational efficiency for event organizers.
+            </p>
+        </div>
+        <a href="https://codepen.io/FreeCodeCamp/" class="btn btn-show-all" target="_blank">Show all &nbsp;  <i class="fas fa-chevron-right"></i></a>
+    </section>
+    <section id="contact">
+        <div class="contact-section-header">
+            <h2>Let's work together...</h2>
+            <p>How do you take your coffee?</p>
+        </div>
+        <div class="contact-links">
+            <a href="https://facebook.com/freecodecamp" target="_blank" class="btn contact-details">
+                <i class="fab fa-facebook-square"></i>
+                &nbsp;
+                facebook
+            </a>
+        </div>
+    </section>
+</body>
+</html>
