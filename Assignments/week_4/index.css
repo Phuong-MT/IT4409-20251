@@ -1,0 +1,168 @@
+:root{
+    --background-color-head: rgb(192, 33, 53);
+    --color-text-white: rgb(255, 255, 255);
+    --color-text-main: #333;
+    --border-color: #ebeef5;
+    --color-text-active: #c02135
+}
+body{
+    font-family:"Nunito"!important;
+}
+a{
+    text-decoration: none;
+    color: var(--color-text-main)
+}
+p{
+    margin:5px 0;
+}
+header{
+    background: var(--background-color-head);
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    padding: 0 24px;
+    margin-bottom: 10px;
+    max-width: 1210px;
+    width: 100%;
+    margin: 0 auto;
+}
+.header .head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 24px;
+    max-height: 66px;
+}
+header .logo-app{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap:10px;
+    color: var(--color-text-white);
+}
+header .navbar{
+    display: flex;
+    gap: 10px;  
+
+ }
+header .navbar a{
+    color: var(--color-text-white)
+}
+
+.tab-nav{
+    margin: 0 auto;
+    max-width: 1210px;
+    padding: 20px;
+   
+}
+.tab-nav,.tab-nav a{
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    color:var(--background-color-head)
+}
+/* main */
+main{
+    margin-top: 20px;
+    max-width: 1210px;
+    width: 100%;
+    margin: 0 auto;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+/* main-left */
+main .main-left{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.main-left .info{
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+.main-left .info img{
+    border-radius: 16px 16px 0 0;
+    transition: all .2s linear;
+}
+.main-left .info .avatar img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 5px solid var(--color-text-white);
+    object-fit: cover;
+    width: 190px;
+    height: 190px;
+    transform: translate(-70%, -50%);
+}
+.main-left .info .info-student{
+    box-sizing: border-box;
+    margin-top: 110px;
+    padding: 20px;
+}
+.main-left .status{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+.border-divider{
+    border-right: 1px solid var(--border-color);
+}
+.main-left .status .tab{
+    display: flex;
+    border: 1px solid var(--border-color);
+}
+.main-left .status .tab div{
+    padding: 10px;
+}
+.main-left .status .tab .active{
+    color: var(--color-text-active)
+}
+
+/* main-right */
+.main-right {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+.main-right .tab{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--border-color);
+}
+.main-right .tab div{
+    padding: 10px;
+    border: 1px solid var(--border-color);
+}
+.tab .active{
+    color: var(--background-color-head)
+}
+.section{
+    display: flex;
+    flex-direction: column;
+}
+.section .section-name{
+    padding-bottom: 10px;
+    color:var(--color-text-main);
+    font-size: 16px;
+    font-weight: 600;
+}
+.section .section-info{
+    display: grid;
+    row-gap: 10px;
+    column-gap: 20px;
+    grid-template-columns: auto  auto auto;
+}
