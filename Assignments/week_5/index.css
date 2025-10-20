@@ -1,0 +1,123 @@
+:root{
+    --background-color-head: rgb(192, 33, 53);
+    --color-text-white: rgb(255, 255, 255);
+    --color-text-main: #333;
+    --border-color: #ebeef5;
+    --color-text-active: #c02135;
+    --background-color-head-table : #e0ecff;
+    --background-color-head-semester: #b5d1ff;
+    --background-color-hover: #85A5FF;
+    --color-hover: #597EF7;
+}
+.header, .tab-nav, main{
+    max-width: 1350px;
+}
+/* main-right */
+.main-right {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+.main-right .tab{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--border-color);
+}
+.main-right .tab div{
+    padding: 10px;
+    border: 1px solid var(--border-color);
+}
+.tab .active{
+    color: var(--background-color-head)
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+
+.view-semester{
+    border:1px solid var(--border-color);
+    border-radius: 16px 16px 0 0 ;
+}
+
+.view-semester .table-header{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px 16px 0 0 ;
+    height: 50px;
+    background-color: var(--background-color-head-table);
+}
+.table-body td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.table-body .semester-header td{
+    text-align: left;
+    padding: 15px;
+    padding-left: 40px;
+    background-color: var(--background-color-head-semester);
+    
+    position: relative;
+}
+.semester-header td::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid var(--color-text-main);
+  border-bottom: 2px solid var(--color-text-main);
+  transform: translateX(4px) translateY(-65%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.semester-header-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.semester-header.open td::before{
+    transform: translateX(4px) rotate(-135deg);
+}
+.semester-actions{
+    display: none
+}
+.semester-header.open .semester-actions{
+    display: flex;
+    gap:10px
+}
+.semester-title{
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+.semester-body{
+    display: none;
+}
+.semester-body.show{
+    display:contents;
+}
+.btn-semester{
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    height: 32px;
+    width: fit-content;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 2px 7px;
+}
+.btn-semester:hover{
+    border-color: var(--background-color-hover);
+    color: var(--color-hover);
+}
