@@ -1,0 +1,12 @@
+Bo cuc:
+    input - search mssv
+    table - ket qua tra ve
+logic:
+    - async - await + promise + setTimeout(gia lap fetch data)
+    - promise.All xu ly song song.
+    - join data.
+    - gan du lieu vao bang da tao.
+    -cache - localstorage (khi co data fetch -> luu cache):
+        if(mssv === oldmssv) -> lay cache
+        else fetch data
+    - try- catch bat error

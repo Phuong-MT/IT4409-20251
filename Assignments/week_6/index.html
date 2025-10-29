@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../week_4/index.css">
+    <link rel="stylesheet" href="./index.css">
+    <!-- <link rel="stylesheet" href="../week_3/single-page-base-responsive/font-awesome/css/font-awesome.min.css"> -->
+</head>
+<body>
+    <header>
+       <div class="header">
+        <div class="head">
+            <div>
+                <img src="../week_4/image/Logobk.2a30b706.png" alt="bkhn" loading="lazy" >
+            </div>
+            <div class="logo-app">
+                <img src="../week_4/image/logo-app.png" alt="bk-ict">
+                <div>
+                    <p>xin chao</p>
+                    <p>Truong Minh Phuong</p>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <a href="#trang-chu"> TRANG CHU </a>
+            <a href="#ngoai-khoa"> NGOAI KHOA </a>
+            <a href="#huong-nghiep"> HUONG NGHIEP </a>
+            <a href="#hoc-bong"> HOC BONG </a>
+            <a href="#cham-diem"> CHAM DIEM </a>
+            <a href="#hanh-chinh"> HANH CHINH </a>
+            <a href="#tan-sv"> TAN SINH VIEN </a>
+            <a href="#ho-so"> HO SO </a>
+        </div>
+       </div>
+    </header>
+    <main>
+        <h2>Tra cuu ket qua hoc tap</h2>
+        <div>       
+            <input id="sid-input" type="text" placeholder="Nhap ma so sinh vien..." />
+            <button id="search-btn">Tra cuu</button>
+            <div id="status"></div></div>
+        <table id="result-table">
+            <thead>
+            <tr>
+                <th>Ma hoc phan</th>
+                <th>Ten hoc phan</th>
+                <th>Tin chi</th>
+                <th>Hoc ky</th>
+                <th>Điem so(10)</th>
+                <th>Điem chu</th>
+            </tr>
+            </thead>
+            <tbody id="result-body"></tbody>
+        </table>
+    </main>
+</body>
+    <script src="./index.js"></script>
+</html>

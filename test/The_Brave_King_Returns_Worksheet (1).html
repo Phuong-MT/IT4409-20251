@@ -198,7 +198,6 @@
         btn.type = 'button';
         btn.textContent = label;
         Object.assign(btn.style, {
-          margin: '6px',
           padding: '8px 12px',
           background: '#f4d35e',
           border: '1px solid #caa93a',
@@ -209,7 +208,7 @@
           position: 'fixed',
           top: '16px',
           right: right,
-          zIndex: 9999
+          zIndex: 10
         });
         document.body.appendChild(btn);
       }
@@ -264,17 +263,15 @@
       const imgHeight = imgProps.height * pdfRatio;
 
       if (imgHeight <= pageHeight) {
-        // vừa 1 trang
         doc.addImage(imgData, "PNG", margin,margin, pageWidth - 2 * margin, imgHeight - 2 * margin);
-      } else {
-        // nhiều trang: cắt canvas ra từng phần
+      } else { 
         let remainingHeight = imgProps.height;
         let position = 0;
         const canvasPage = document.createElement("canvas");
         const ctx = canvasPage.getContext("2d");
 
         canvasPage.width = imgProps.width;
-        canvasPage.height = pageHeight / pdfRatio; // chuyển từ pt sang px canvas
+        canvasPage.height = pageHeight / pdfRatio;
 
         while (remainingHeight > 0) {
           ctx.clearRect(0, 0, canvasPage.width, canvasPage.height);
