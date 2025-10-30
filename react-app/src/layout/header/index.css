@@ -1,0 +1,45 @@
+body{
+    font-family:"Nunito"!important;
+}
+a{
+    text-decoration: none;
+    color: var(--color-text-main)
+}
+p{
+    margin:5px 0;
+}
+header{
+    background: var(--background-color-head);
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    padding: 0 24px;
+    margin-bottom: 10px;
+    max-width: 1210px;
+    width: 100%;
+    margin: 0 auto;
+}
+.header .head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 24px;
+    max-height: 66px;
+}
+header .logo-app{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap:10px;
+    color: var(--color-text-white);
+}
+header .navbar{
+    display: flex;
+    gap: 10px;  
+
+ }
+header .navbar a{
+    color: var(--color-text-white)
+}
