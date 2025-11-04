@@ -1,45 +1,69 @@
-body{
-    font-family:"Nunito"!important;
+body {
+    font-family: "Nunito" !important;
+    margin: 0; 
+    padding-top: 120px;
 }
-a{
+
+a {
     text-decoration: none;
-    color: var(--color-text-main)
+    color: var(--color-text-main);
 }
-p{
-    margin:5px 0;
+
+p {
+    margin: 5px 0;
 }
-header{
+
+header {
     background: var(--background-color-head);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.header{
+
+.header {
     display: flex;
     flex-direction: column;
-    gap:30px;
+    gap: 30px;
     padding: 0 24px;
     margin-bottom: 10px;
     max-width: 1210px;
     width: 100%;
     margin: 0 auto;
 }
-.header .head{
+
+.header .head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 24px;
     max-height: 66px;
+    align-items: center;
 }
-header .logo-app{
+
+header .logo-app {
     display: flex;
-    justify-content: center;
-    justify-items: center;
-    gap:10px;
+    align-items: center;
+    gap: 10px;
     color: var(--color-text-white);
 }
-header .navbar{
-    display: flex;
-    gap: 10px;  
 
- }
-header .navbar a{
-    color: var(--color-text-white)
+header .navbar {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 16px;
+}
+
+header .navbar a {
+    color: var(--color-text-white);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+header .navbar a:hover {
+    color: var(--color-primary);
 }

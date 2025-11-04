@@ -1,0 +1,23 @@
+ [{ "cid": "IT3070", "name": "Nguyen ly he dieu hanh", "credits": 3 },
+    { "cid": "PE2501", "name": "Cau long 1", "credits": 0 },
+    { "cid": "PH1110", "name": "Vat ly dai cuong 1", "credits": 3 },
+    { "cid": "IT3120", "name": "Phan tich va thiet ke he thong", "credits": 2 },
+    { "cid": "IT3170", "name": "Thuat toan ung dung", "credits": 2 },
+    { "cid": "PE2401", "name": "Bong ban 1", "credits": 0 },
+    { "cid": "IT4651", "name": "Thiet ke va trien khai mang IP", "credits": 3 },
+    { "cid": "SSH1141", "name": "Lich su dang cong san Viet Nam", "credits": 2 },
+    { "cid": "IT4015", "name": "Nhap mon an toan thong tin", "credits": 3 },
+    { "cid": "IT3931", "name": "Project II", "credits": 2 },
+    { "cid": "IT4060", "name": "Lap trinh mang", "credits": 2 },
+    { "cid": "IT3040", "name": "Ky thuat lap trinh", "credits": 2 },
+    {
+        "cid": "EM1180",
+        "name": "Van hoa kinh doanh va tinh than khoi nghiep",
+        "credits": 2
+    },
+    { "cid": "IT3090", "name": "Co so du lieu", "credits": 3 },
+    { "cid": "IT3150", "name": "Project I", "credits": 2 },
+    { "cid": "IT4172", "name": "Xu ly tin hieu", "credits": 2 },
+    { "cid": "IT3080", "name": "Mang may tinh", "credits": 3 },
+    { "cid": "IT3180", "name": "Nhap mon cong nghe phan mem", "credits": 3 },
+    { "cid": "IT4593", "name": "Nhap mon ky thuat truyen thong", "credits": 2 }]
