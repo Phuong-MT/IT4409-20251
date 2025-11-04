@@ -1,0 +1,16 @@
+state:
+    - input trong component SearchForm;
+    - studentId : HomePage ( nhan tu input)
+    - result : HomePage (ket qua sau khi fetch)
+    - studentInfo: HomePage ( thong tin student neu thay)
+    - isLoading: HomePage (Loading khi fetch)
+    - error: HomePage (catch khi fetch error / not found)
+flow:
+    user nhap input -> click tra search -> studentId (change) -> useEffect chay
+    -> set( loading, error, result, studentInfo) ve trang thai khoi tao.
+    //
+        + Neu fetch loi -> tha loi.
+        + Neu khong tim thay id -> not found.
+    //
+        -> Id user ton tai -> set state studentInfo, result.
+        -> hien thi
