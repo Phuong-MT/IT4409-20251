@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose, { Schema, model, isValidObjectId } from "mongoose";
-import { off } from "process";
+import cors from "cors";
 
 const dbConnect = () => {
     const uri =
@@ -37,6 +37,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(
+    cors({
+        origin: "*",
+    }),
+);
 dbConnect();
 
 const userRouter = express.Router();
@@ -119,25 +124,32 @@ userRouter.delete("/:id", async (req, res) => {
 
 userRouter.get("/", async (req, res) => {
     try {
-        const { page = "0" } = req.query;
-        const pageNumber = parseInt(page as string);
+        const page = Number(req.query.page) || 1;
+        const name = req.query?.name;
         const limit = 10;
-        const offset = pageNumber * limit;
-        const agg = [{ $skip: offset }, { $limit: limit }];
-        let query = UserModel.aggregate(agg);
+        const offset = (page - 1) * limit;
 
-        const [users, count] = await Promise.all([query.exec(), UserModel.countDocuments()]);
+        const match: any = {};
+        if (name) {
+            match.name = { $regex: name, $options: "i" };
+        }
+
+        const pipeline = [{ $skip: offset }, { $limit: limit }, { $match: match }];
+
+        const [users, count] = await Promise.all([
+            UserModel.aggregate(pipeline),
+            UserModel.countDocuments(match),
+        ]);
 
         return res.status(200).json({
-            data: users.map((user) => {
-                const { __v, ...rest } = user;
-                return rest;
-            }),
-            total: count,
+            data: users.map(({ __v, ...rest }) => rest),
+            total: Math.ceil(count / limit),
+            page,
+            limit,
         });
-    } catch (error: any) {
-        console.log("get user error: ", error);
-        res.status(500).json("Internal server error");
+    } catch (err) {
+        console.log("get user error:", err);
+        return res.status(500).json("Internal server error");
     }
 });
 
